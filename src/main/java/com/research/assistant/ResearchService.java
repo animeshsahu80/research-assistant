@@ -79,10 +79,15 @@ public class ResearchService {
         StringBuilder prompt= new StringBuilder();
 
         switch (researchRequest.getOperation()){
+            case "eli5":
+                prompt.append("Explain the following text to me like i am 5 year old: \n\n");
+            case "paraphrase":
+                prompt.append("Paraphrase the following text: \n\n");
+                break;
             case "summarize":
                 prompt.append("Provide clear and concise summary of following text in a few sentences:\n\n");
                 break;
-            case "suggest":
+            case "suggest_articles":
                 prompt.append("based on following text suggest few more articles related to this text, format the response with bullet points and clear heading:\n\n");
             default:
                 throw new IllegalArgumentException("Unknown operation: "+ researchRequest.getOperation());
