@@ -81,6 +81,7 @@ public class ResearchService {
         switch (researchRequest.getOperation()){
             case "eli5":
                 prompt.append("Explain the following text to me like i am 5 year old: \n\n");
+                break;
             case "paraphrase":
                 prompt.append("Paraphrase the following text: \n\n");
                 break;
@@ -89,6 +90,7 @@ public class ResearchService {
                 break;
             case "suggest_articles":
                 prompt.append("based on following text suggest few more articles related to this text, format the response with bullet points and clear heading:\n\n");
+                break;
             default:
                 throw new IllegalArgumentException("Unknown operation: "+ researchRequest.getOperation());
         }
